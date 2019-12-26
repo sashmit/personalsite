@@ -1,0 +1,38 @@
+baseURL = "http://sashmit.com"
+title = "Sashmit Bhaduri"
+theme = "hugo-theme-zzo"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+hasCJKLanguage = false
+
+summaryLength = 70
+
+copyright = "&copy;{year}, Sashmit Bhaduri All Rights Reserved"
+timeout = 10000
+enableEmoji = true
+paginate = 13
+rssLimit = 500
+
+enableGitInfo = false
+googleAnalytics = ""
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xHTML = true
+  [markup.highlight]
+    codeFences = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"

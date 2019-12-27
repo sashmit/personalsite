@@ -1,0 +1,2 @@
+- git submodule external deps.
+- cleanup old crap

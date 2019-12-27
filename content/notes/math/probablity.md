@@ -85,12 +85,14 @@ In order to be able to compute any probability involving discrete random variabl
 For example, if you want to compute $$\mathbb{P}[X\in B]$$ for some set $$ B \subseteq \mathbb{R} $$, all you pick all are $$x \in S$$  which are also in $$B$$ and sum probabilities. E.g, $$\mathbb{P}[X \in B]=\sum_{x \in S \cap B} \mathbb{P}[X=x]$$
 
 Because of this, the distribution of a discrete random variable $$X$$ is often described using a table:
+
 $$
 X \sim\left(\begin{array}{cccc}
 {x_{1}} & {x_{2}} & {x_{3}} & {\dots} \\
 {p_{1}} & {p_{2}} & {p_{3}} & {\dots}
 \end{array}\right)
 $$
+
 where the top row lists all elements of $$S$$ (the support of $$X$$), and the bottom row lists the probabilities $$
 \left(p_{i}=\mathbb{P}\left[X=x_{i}\right], i \in \mathbb{N}\right)$$.K
 
@@ -102,11 +104,13 @@ If random variable has support $$S=\{0,1\}$$, it is called indicators (can be th
 
 For example, if $$Y$$ is outcome of coin toss, and if you want to know if Heads (H) occured, can write $$X=\mathbf{1}_{\{Y=H\}}$$
 
-If you have two die, $$Y_1$$ and $$Y_2$$, with $$S=\{1, 2, 3, 4, 5, 6\}$$, and you want to know if probalbity that their sum is at least 9, define new random variable $$Z = Y_1 + Y_2 $$. Another random variable defined as indicator $$X=\mathbf{1}_{\{Z \geq 9\}}$$. i.e, $$
+If you have two die, $$Y_1$$ and $$Y_2$$, with $$S=\{1, 2, 3, 4, 5, 6\}$$, and you want to know if probability that their sum is at least 9, define new random variable $$Z = Y_1 + Y_2 $$. Another random variable defined as indicator $$X=\mathbf{1}_{\{Z \geq 9\}}$$. i.e, 
+
+$$
 X=\left\{\begin{array}{ll}
 {1,} & {Z \geq 9} \\
 {0,} & {Z<9}
-\end{array}\right
+\end{array}\right.
 $$
 
-Lets us compute whether event of interest (X) has happened by computing $$\mathbb{P}[X=1]$$
+If we compute $$\mathbb{P}[X=1]$$, then this gives us probability whether the event of interest (X) has happened or not. 

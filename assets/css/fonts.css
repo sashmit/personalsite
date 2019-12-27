@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'AntykwaTorunska-Bold';
+    src: url('../fonts/AntykwaTorunska-Bold.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AntykwaTorunska-Regular';
+    src: url('../fonts/AntykwaTorunska-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}

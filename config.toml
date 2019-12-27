@@ -3,7 +3,7 @@ title = "Sashmit Bhaduri"
 theme = "hugo-theme-zzo"
 
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 hasCJKLanguage = false
 
 summaryLength = 70
@@ -14,8 +14,8 @@ enableEmoji = true
 paginate = 13
 rssLimit = 500
 
-enableGitInfo = false
-googleAnalytics = ""
+enableGitInfo = true
+googleAnalytics = "G-W653NMQV9S"
 
 [markup]
   [markup.goldmark]

@@ -98,11 +98,11 @@ where the top row lists all elements of $$S$$ (the support of $$X$$), and the bo
 
 When the random variable is $$\mathbb{N}$$-valued or $$\mathbb{N}_0$$-valued, we know what $$x_{1}, x_{2}, \dots$$ are, so we just use the sequence $$p_{1}, p_{2}, \dots$$. This is called the **probability mass function**.  
 
-For extended $$\mathbb{N}_0$$-valued, if you are given a pmf of the $$\mathbb{N}$$-valued or $$\mathbb{N}_0$$-valued cases and you sum them up, see if it is equal to 1. If so, then $$X$$ never takes $$+\infty$$, or else probablity of $$+\infty$$ is positive.
+For extended $$\mathbb{N}_0$$-valued, if you are given a pmf of the $$\mathbb{N}$$-valued or $$\mathbb{N}_0$$-valued cases and you sum them up, see if it is equal to 1. If so, then $$X$$ never takes $$+\infty$$, or else probability of $$+\infty$$ is positive.
 
 If random variable has support $$S=\{0,1\}$$, it is called indicators (can be thought as of as signal lights). If $$X=1$$, then event of interest has happened  and if $$X=0$$, then event of interest has not happened. 
 
-For example, if $$Y$$ is outcome of coin toss, and if you want to know if Heads (H) occured, can write $$X=\mathbf{1}_{\{Y=H\}}$$
+For example, if $$Y$$ is outcome of coin toss, and if you want to know if Heads (H) occurred, can write $$X=\mathbf{1}_{\{Y=H\}}$$
 
 If you have two die, $$Y_1$$ and $$Y_2$$, with $$S=\{1, 2, 3, 4, 5, 6\}$$, and you want to know if probability that their sum is at least 9, define new random variable $$Z = Y_1 + Y_2 $$. Another random variable defined as indicator $$X=\mathbf{1}_{\{Z \geq 9\}}$$. i.e, 
 
@@ -159,3 +159,35 @@ If $$X$$ is **squared integrable**, a variance Var[$$X$$] can be defined as $$\m
 If $$m$$-th moment exists, all lower moments exist. So, each square integrable random variable is also integrable. 
 
 For random variables that can take on $$+\infty$$, we can say expectation doesn't exist as long as $$\mathbb{P}[X=+\infty]>0$$, that is, there is positive chance that it will take $$+\infty$$.
+
+# Events
+
+Probablity is explained in terms of sample space or probability space, referred usually as $$\Omega$$. 
+
+Various subsets of $$\Omega$$ are called events.
+
+Events typically contain all elementary events, elements of the probability space, usually denoted as $$\omega$$. 
+
+For example, if we want to compute likelyhood of getting odd number as a sum of outcomes of two dice throws, first build probablity space:
+$$
+\Omega=\{(1,1),(1,2), \ldots,(6,1),(2,1),(2,2), \ldots,(2,6), \ldots,(6,1),(6,2), \ldots,(6,6)\}
+$$
+
+then define event A which contains all pairs $$(k, l) \in \Omega$$ such that k + l is an odd number. i.e,
+$$
+A=\{(1,2),(1,4),(1,6),(2,1),(2,3), \ldots,(6,1),(6,3),(6,5)\}
+$$
+
+Events are thus turn into simple indicator random variables. For event A, the random variable $$\mathbf{1}_{A}$$ is denoted as
+$$
+\mathbf{1}_{A}=\left\{\begin{array}{ll}
+{1,} & {A \text { happened }} \\
+{0,} & {A \text { did not happen }}
+\end{array}\right.
+$$
+
+Conversely, for indicator random variable $$X$$, indicated event $$A$$ is a set of events for which X takes value 1. If we apply expectation to indicator random variable $$X=\mathbf{1}_{A}$$, we get probablity of $$A$$: $$\mathbb{E}\left[\mathbf{1}_{A}\right]=1 \times \mathbb{P}[A]+0 \times \mathbb{P}\left[A^{c}\right]=\mathbb{P}[A]$$ ($$\mathbf{1}_{A}$$ takes 1 on A, 0 on complement $$A^{c}=\Omega \backslash A$$).
+
+# Dependence and independence
+
+One of the main differences b

@@ -30,13 +30,13 @@ Probability is about _random variables_.
 
 **Random variables** are uncertain, numerical quantities (values in $$\mathbb{R}$$)
 
-Usually don't know with certainty what value a random variable $$X$$ will take, we know how to compute probablity that its value will be within some subset of $$\mathbb{R}$$
+Usually we don't know with certainty what value a random variable $$X$$ will take, but we know how to compute probability that its value will be within some subset of $$\mathbb{R}$$
 
-For example, we can compute, $$\mathbb{P}[X \geq 7], \mathbb{P}[X \in[2,3.1]] $$ or $$\mathbb{P}[X \in\{1,2,3\}]$$
+For example, we can compute $$\mathbb{P}[X \geq 7], \mathbb{P}[X \in[2,3.1]] $$ or $$\mathbb{P}[X \in\{1,2,3\}]$$
 
-Such a collection is called a _distribution_ of $$X$$. Note: don't confuse random variable with its _distribution_, especially when multiple random variables appear at same time.
+Such a collection is called a **distribution** of $$X$$. Note: don't confuse a random variable with its _distribution_, This can be easy especially when multiple random variables appear at same time.
 
-When two random variables $$X$$ and $$Y$$ have same distribution, they are referred to as *equally distributed*. The common notation is $$X \stackrel{(d)}{=} Y$$. This implies $$ \mathbb{P}[X \in A]=\mathbb{P}[Y \in A] $$.
+When two random variables $$X$$ and $$Y$$ have same distribution, they are referred to as **equally distributed**. The common notation is $$X \stackrel{(d)}{=} Y$$. This implies $$ \mathbb{P}[X \in A]=\mathbb{P}[Y \in A] $$.
 
 # Countable Sets
 
@@ -60,14 +60,14 @@ Here: $$f(k)=\left\{\begin{array}{ll}{2 k+1,} & {k \geq 0} \\{-2 k,} & {k<0}\end
 
 - Rational numbers (fractions) $$\mathbb{Q}$$ are countable.
 
-- Set [0, 1] of all real numbers between 0 and 1 are *not countable*; proved by Georg Cantor using the diagonal argument.
+- Set [0, 1] of all real numbers between 0 and 1 are **not countable**; proved by Georg Cantor using the diagonal argument.
 
 
 # Discrete random variables  
 
 Discrete - if random variable takes at most countably many values.
 
-$$X$$ is said to be discrete if there exists finite or countable set $$S \subset \mathbb{R}$$ such that $$\mathbb{P}[X \in S]=1$$ (e.g, if we know with certainty that only values $$X$$ can take are those in $$S$$). 
+$$X$$ is said to be discrete if there exists a finite or countable set $$S \subset \mathbb{R}$$ such that $$\mathbb{P}[X \in S]=1$$ (e.g, if we know with certainty that only values $$X$$ can take are those in $$S$$). 
 
-The smallest set $$S$$ with this property is called *support* of $$X$$. Often written $$_{X}$$
+The smallest set $$S$$ with this property is called the **support** of $$X$$. Often written $$_{X}$$
 

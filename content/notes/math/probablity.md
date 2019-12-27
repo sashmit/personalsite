@@ -67,7 +67,46 @@ Here: $$f(k)=\left\{\begin{array}{ll}{2 k+1,} & {k \geq 0} \\{-2 k,} & {k<0}\end
 
 Discrete - if random variable takes at most countably many values.
 
-$$X$$ is said to be discrete if there exists a finite or countable set $$S \subset \mathbb{R}$$ such that $$\mathbb{P}[X \in S]=1$$ (e.g, if we know with certainty that only values $$X$$ can take are those in $$S$$). 
+$$X$$ is said to be discrete if there exists a _finite_ or _countable_ set $$S \subset \mathbb{R}$$ such that $$\mathbb{P}[X \in S]=1$$ (e.g, if we know with certainty that only values $$X$$ can take are those in $$S$$). 
 
 The smallest set $$S$$ with this property is called the **support** of $$X$$. Often written $$_{X}$$
 
+Common supports:
+- If $$X$$ takes only values 1, 2, 3, ..., we say $$X$$ is $$\mathbb{N}$$-**valued**.
+- If we allow 0 (in addition to $$\mathbb{N}$$), so that $$\mathbb{P}[X \in S]=1$$, we say $$X$$ is $$\mathbb{N}_0$$-**valued**.
+- Sometimes, it is convenient to have discrete random numbers that can take $$+\infty$$. For example, modeling waiting times which may or may not ever happen (infinite waiting time). In these cases, if $$
+S=\{1,2,3, \ldots,+\infty\}=\mathbb{N} \cup\{+\infty\} $$ then can say random value is **extended $$\mathbb{N}_0$$-valued** or (**extended $$\mathbb{N}_0$$-valued**)
+- Sometimes support isn't numbers. For example, heads/tails {H,T} or suit of cards, or a markov chain.
+
+## Computation of probability for discrete random variables
+
+In order to be able to compute any probability involving discrete random variable $$X$$, all you need to know how to compute the probabilities $$\mathbb{P}[X=x]$$, for all $$x \in S$$. Keep in mind that the sum of all of these probabilities adds up to 1.
+
+For example, if you want to compute $$\mathbb{P}[X\in B]$$ for some set $$ B \subseteq \mathbb{R} $$, all you pick all are $$x \in S$$  which are also in $$B$$ and sum probabilities. E.g, $$\mathbb{P}[X \in B]=\sum_{x \in S \cap B} \mathbb{P}[X=x]$$
+
+Because of this, the distribution of a discrete random variable $$X$$ is often described using a table:
+$$
+X \sim\left(\begin{array}{cccc}
+{x_{1}} & {x_{2}} & {x_{3}} & {\dots} \\
+{p_{1}} & {p_{2}} & {p_{3}} & {\dots}
+\end{array}\right)
+$$
+where the top row lists all elements of $$S$$ (the support of $$X$$), and the bottom row lists the probabilities $$
+\left(p_{i}=\mathbb{P}\left[X=x_{i}\right], i \in \mathbb{N}\right)$$.K
+
+When the random variable is $$\mathbb{N}$$-valued or $$\mathbb{N}_0$$-valued, we know what $$x_{1}, x_{2}, \dots$$ are, so we just use the sequence $$p_{1}, p_{2}, \dots$$. This is called the **probability mass function**.  
+
+For extended $$\mathbb{N}_0$$-valued, if you are given a pmf of the $$\mathbb{N}$$-valued or $$\mathbb{N}_0$$-valued cases and you sum them up, see if it is equal to 1. If so, then $$X$$ never takes $$+\infty$$, or else probablity of $$+\infty$$ is positive.
+
+If random variable has support $$S=\{0,1\}$$, it is called indicators (can be thought as of as signal lights). If $$X=1$$, then event of interest has happened  and if $$X=0$$, then event of interest has not happened. 
+
+For example, if $$Y$$ is outcome of coin toss, and if you want to know if Heads (H) occured, can write $$X=\mathbf{1}_{\{Y=H\}}$$
+
+If you have two die, $$Y_1$$ and $$Y_2$$, with $$S=\{1, 2, 3, 4, 5, 6\}$$, and you want to know if probalbity that their sum is at least 9, define new random variable $$Z = Y_1 + Y_2 $$. Another random variable defined as indicator $$X=\mathbf{1}_{\{Z \geq 9\}}$$. i.e, $$
+X=\left\{\begin{array}{ll}
+{1,} & {Z \geq 9} \\
+{0,} & {Z<9}
+\end{array}\right
+$$
+
+Lets us compute whether event of interest (X) has happened by computing $$\mathbb{P}[X=1]$$

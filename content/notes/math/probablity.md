@@ -162,13 +162,13 @@ For random variables that can take on $$+\infty$$, we can say expectation doesn'
 
 # Events
 
-Probablity is explained in terms of sample space or probability space, referred usually as $$\Omega$$. 
+Probability is explained in terms of sample space or probability space, referred usually as $$\Omega$$. 
 
 Various subsets of $$\Omega$$ are called events.
 
 Events typically contain all elementary events, elements of the probability space, usually denoted as $$\omega$$. 
 
-For example, if we want to compute likelyhood of getting odd number as a sum of outcomes of two dice throws, first build probablity space:
+For example, if we want to compute likelihood of getting odd number as a sum of outcomes of two dice throws, first build probability space:
 $$
 \Omega=\{(1,1),(1,2), \ldots,(6,1),(2,1),(2,2), \ldots,(2,6), \ldots,(6,1),(6,2), \ldots,(6,6)\}
 $$
@@ -186,8 +186,34 @@ $$
 \end{array}\right.
 $$
 
-Conversely, for indicator random variable $$X$$, indicated event $$A$$ is a set of events for which X takes value 1. If we apply expectation to indicator random variable $$X=\mathbf{1}_{A}$$, we get probablity of $$A$$: $$\mathbb{E}\left[\mathbf{1}_{A}\right]=1 \times \mathbb{P}[A]+0 \times \mathbb{P}\left[A^{c}\right]=\mathbb{P}[A]$$ ($$\mathbf{1}_{A}$$ takes 1 on A, 0 on complement $$A^{c}=\Omega \backslash A$$).
+Conversely, for indicator random variable $$X$$, indicated event $$A$$ is a set of events for which X takes value 1. If we apply expectation to indicator random variable $$X=\mathbf{1}_{A}$$, we get probability of $$A$$: $$\mathbb{E}\left[\mathbf{1}_{A}\right]=1 \times \mathbb{P}[A]+0 \times \mathbb{P}\left[A^{c}\right]=\mathbb{P}[A]$$ ($$\mathbf{1}_{A}$$ takes 1 on A, 0 on complement $$A^{c}=\Omega \backslash A$$).
 
 # Dependence and independence
 
-One of the main differences b
+One of the main differences between random variables and deterministic quantities os that in former case, whole is more than sum of its parts. 
+
+For example, with random variable $$X$$ ans $$Y$$, both of the following cases will give a same distribution:
+1. throwing two dice, denote first one by $$X$$, and second one by $$Y$$.
+2. throw two dice, denote outcome of first by $$X$$, and set $$Y=6-X$$. 
+
+In both case, X and Y will have same distribution:
+$$
+X, Y \sim\left(\begin{array}{cccccc}
+{1} & {2} & {3} & {4} & {5} & {6} \\
+{\frac{1}{6}} & {\frac{1}{6}} & {\frac{1}{6}} & {\frac{1}{6}} & {\frac{1}{6}} & {\frac{1}{6}}
+\end{array}\right)
+$$
+
+The pairs $$(X, Y)$$ are very different in two examples. In first, if value of $$X$$ is revealed, it does not affect view of value of $$Y$$. In second, knowledge of $$X$$ gives us knowledge of $$Y$$ ($$6-X$$). 
+
+In general, when more than one random variable is considered, one must look at external information about their relationship outside of their distributions. If there is no relationship, they are independent. i, for two discrete random variables X and Y: 
+$$
+\mathbb{P}[X=x \text { and } Y=y]=\mathbb{P}[X=x] \mathbb{P}[Y=y]
+$$
+
+for all $$x$$ and $$y$$ in the respective supports respective supports $$_X and _Y$$ of $$X$$ and $$Y$$.
+
+Two events $$A$$ and $$B$$ are independent if:
+$$
+\mathbb{P}[A \cap B]=\mathbb{P}[A] \mathbb{P}[B]
+$$

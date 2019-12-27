@@ -114,3 +114,48 @@ X=\left\{\begin{array}{ll}
 $$
 
 If we compute $$\mathbb{P}[X=1]$$, then this gives us probability whether the event of interest (X) has happened or not. 
+
+
+## Expectation
+
+For discrete random variable $$X$$ with support, the definition of $$\mathbb{E}[X]$$ of $$X$$ is:
+
+$$
+\mathbb{E}[X]=\sum_{x \in} x \mathbb{P}[X=x]
+$$
+
+as long as the (possibly) infinite sum $$\sum_{x \in} x \mathbb{P}[X=x]$$ absolutely converges, otherwise there is no expectation defined (if sum does not converge or only converges conditionally). 
+
+For $$\mathbb{N}_0$$-valued$$ random variables, the above expression simplifies to:
+
+$$
+\mathbb{E}[X]=\sum_{i=0}^{\infty} i \times p_{i}
+$$
+
+where $$p_{i}=\mathbb{P}[X=i],$$ for $$i \in \mathbb{N}_0$$. In this case, if:
+
+$$
+\lim _{n \rightarrow \infty} \sum_{i=0}^{n} i p_{i}=+\infty
+$$
+
+This sum doesn't absolutely converge and expectation doesn't formally exist, but by convention we can write $$\mathbb{E}[X]=+\infty$$ to indicate that sum diverges towards infinity.
+
+If $$\mathbb{E}[X]$$ exists, then $$X$$ is called **integrable**. 
+
+If $$\mathbb{E}\left[X^{2}\right]<\infty$$ ($$X^{2}$$ is integrable), $$X$$ is called **squared integrable**. 
+
+If $$\mathbb{E}\left[|X|^{m}\right]<\infty$$, for some $$m > 0$$, then $$X$$ has a **finite $$m$$-th moment.** 
+
+If $$X$$ has a finite $$m$$-th moment, $$\left.\mathbb{E}[\|X-\mathbb{E}[X]]^{m}\right]$$ exists, and is called the **$$m$$-th central moment**. 
+
+Expectations hold the following properties for random integrable variables $$X$$ and $$Y$$:
+
+* **Linearity**: $$\mathbb{E}[\alpha X+\beta Y]=\alpha \mathbb{E}[X]+\beta \mathbb{E}[Y], \text { for } \alpha, \beta \in \mathbb{R}$$
+
+* **Monotonicity**: $$\mathbb{E}[X] \geq \mathbb{E}[Y] \text { if } \mathbb{P}[X \geq Y]=1$$
+
+If $$X$$ is **squared integrable**, a variance Var[$$X$$] can be defined as $$\mathbb{E}\left[(X-m)^{2}\right]$$ where $$m=\mathbb{E}[X]$$. The square root $$\sqrt{\operatorname{Var}[X]}$$ is called the **standard deviation**. 
+
+If $$m$$-th moment exists, all lower moments exist. So, each square integrable random variable is also integrable. 
+
+For random variables that can take on $$+\infty$$, we can say expectation doesn't exist as long as $$\mathbb{P}[X=+\infty]>0$$, that is, there is positive chance that it will take $$+\infty$$.

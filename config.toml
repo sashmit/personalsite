@@ -11,7 +11,7 @@ summaryLength = 70
 copyright = "&copy;{year}, Sashmit Bhaduri All Rights Reserved"
 timeout = 10000
 enableEmoji = true
-paginate = 13
+paginate = 15
 rssLimit = 500
 
 enableGitInfo = true

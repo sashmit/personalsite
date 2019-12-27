@@ -15,7 +15,7 @@ I use [netifly][3] to host the site on my domain.
 
 The tech stack it runs in top of is probably most associated with the [JAMStack][4].
 
-[1]:	https://blogdown.com "Blogdown"
+[1]:	https://github.com/rstudio/blogdown "Blogdown"
 [2]:	https://rstudio.com "RStudio"
 [3]:	https://netlify.com "Netlify"
 [4]:	https://jamstack.org "JAMStack"

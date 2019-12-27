@@ -1,7 +1,7 @@
-logoText = "Sashmit Bhaduri"
-description = "test descrip;tion"
-custom_css = []
-custom_js = []
+logoText = "sashmit.com"
+description = "Sashmit Bhaduri"
+custom_css = ["css/custom.css", "scss/custom.scss"]
+custom_js = ["js/custom.js"]
 
 # header
 homeHeaderType = "text" # text, img, slide
@@ -12,9 +12,9 @@ enablePhotoSwipe = true
 enableSearch = true
 enableGoToTop = true
 enableWhoami = true
-summaryShape = "classic" # card, classic, compact
-archiveGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
-archivePaginate = 13
+summaryShape = "card" # card, classic, compact
+archiveGroupByDate = "2006-01" # "2006-01": group by month, "2006": group by year
+archivePaginate = 15
 paginateWindow = 1
 
 # whoami
@@ -41,7 +41,7 @@ showPoweredBy = true
 showFeedLinks = true
 showSocialLinks = true
 enableLangChange = true
-enableThemeChange = false
+enableThemeChange = true
 themeOptions = ["dark", "light", "hacker", "solarized", "custom"]
 
 # service
@@ -102,14 +102,14 @@ commento = false
   email = "mailto:sashmit@gmail.com"
   facebook = ""
   twitter = ""
-  github = "https://github.com/zzossig/hugo-theme-zzo"
+  github = "https://github.com/sashmit"
   stack-overflow = ""
   instagram = ""
   google-plus = ""
   youtube = ""
   medium = ""
   tumblr = ""
-  linkedin = ""
+  linkedin = "https://www.linkedin.com/in/sashmit-bhaduri-b6a914198/"
   pinterest = ""
   stack-exchange = ""
   telegram = ""

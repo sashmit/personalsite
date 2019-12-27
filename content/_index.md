@@ -6,9 +6,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - HUGO
+      - Sashmit Bhaduri's Blog
     subtitle:
-      - The world’s fastest framework for building websites
+      - Random musings/notes on technology, science, math, etc.
     titleFontSize: 44
     subtitleFontSize: 16
     spaceBetweenTitleSubtitle: 20

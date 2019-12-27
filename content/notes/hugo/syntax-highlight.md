@@ -14,9 +14,9 @@ Dolore in consectetur irure qui laborum. Adipisicing cillum ad laboris dolor. Qu
 
 > This is a blockqute.
 
-* * *
+---- 
 line
-* * *
+---- 
 line
 
 # Code Syntax Highlighting
@@ -129,7 +129,7 @@ echo "Hello World"
 console.log(“Hello world!”);
 ```
 
-### C#
+### C
 
 ``` cs
 using System;
@@ -154,7 +154,7 @@ main()
 }
 ```
 
-### SQL 
+### SQL
 
 ``` sql
 SELECT column_name,column_name

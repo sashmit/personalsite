@@ -17,6 +17,9 @@ rssLimit = 500
 enableGitInfo = true
 googleAnalytics = "G-W653NMQV9S"
 
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

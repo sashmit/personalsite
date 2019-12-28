@@ -211,9 +211,160 @@ $$
 \mathbb{P}[X=x \text { and } Y=y]=\mathbb{P}[X=x] \mathbb{P}[Y=y]
 $$
 
-for all $$x$$ and $$y$$ in the respective supports respective supports $$_X and _Y$$ of $$X$$ and $$Y$$.
+for all $$x$$ and $$y$$ in the respective supports $$_X and _Y$$ of $$X$$ and $$Y$$.
 
 Two events $$A$$ and $$B$$ are independent if:
 $$
 \mathbb{P}[A \cap B]=\mathbb{P}[A] \mathbb{P}[B]
 $$
+
+# Conditional probability
+
+When two random variables are not independent, we still want to know how the knowledge of the exact value of one affects our guesses the value of the other. This is given by the conditional probability.
+
+For events $$A, B$$ such that $$\mathbb{P}[B]>0$$, the conditional probability $$
+\mathbb{P}[A | B] $$ of $$A$$ given $$B$$ is:
+$$
+\mathbb{P}[A | B]=\frac{\mathbb{P}[A \cap B]}{\mathbb{P}[B]}
+$$
+
+The conditional probability is not defined when $$\mathbb{P}[B]=0$$, because this would be dividing by zero. 
+
+A collection of events $$A_{1}, A_{2}, \ldots, A_{n}$$ is called a partition of $$\Omega$$ if $$A_{1} \cup A_{2} \cup \ldots A_{n}=\Omega$$ and $$A_{i} \cap A_{j}=\emptyset$$ for all pairs $$i, j=1, \ldots, n \text { with } i \neq j$$
+
+For a partition $$A_{1}, A_{2}, \ldots, A_{n}$$ and event B of $$\Omega$$, the following hold true:
+
+Law of total probability:
+ $$
+\mathbb{P}[B]=\sum_{i=1}^{n} \mathbb{P}\left[B | A_{i}\right] \mathbb{P}\left[A_{i}\right]
+$$
+
+Bayes formula:  for $$k=1, \ldots, n$$, we have:
+
+$$
+\mathbb{P}\left[A_{k} | B\right]=\frac{\mathbb{P}\left[B | A_{k}\right] \mathbb{P}\left[A_{k}\right]}{\sum_{i=1}^{n} \mathbb{P}\left[B | A_{i}\right] \mathbb{P}\left[A_{i}\right]}
+$$
+
+Above laws are stated for finite partitions, but hold true if $$A_{k}$$ is countability infinite - you just replace finite sums by infintie series.
+
+Random variables can be substituted for events in definition of conditional probability. For two random variables X and Y, the conditional probability $$X=x$$ given $$Y=y$$ with $$x$$ and $$y$$ in the respective supports $$_X and _Y$$ of $$X$$ and $$Y$$ is given by:
+$$
+\mathbb{P}[X=x | Y=y]=\frac{\mathbb{P}[X=x \text { and } Y=y]}{\mathbb{P}[Y=y]}
+$$
+
+This formula produces different probability distribution for each $$y$$. This is called the conditional distribution of $$X$$, given $$Y=y$$.
+
+Example:
+Let X be number of heads obtained when two coins are thrown. Let Y be indicator of the event that the second coin shows heads. The distribution of X is bioomial:
+$$
+X \sim\left(\begin{array}{ccc}
+{0} & {1} & {2} \\
+{\frac{1}{4}} & {\frac{1}{2}} & {\frac{1}{4}}
+\end{array}\right)
+$$
+
+Or in more compatact notation, $$X \sim\left(\frac{1}{4}, \frac{1}{2}, \frac{1}{4}\right)$$. Random variable Y has bernoilli distribution $$Y=\left(\frac{1}{2}, \frac{1}{2}\right)$$
+
+If we are told that Y=0, e.g, second coin is heads, then:
+
+$$
+\mathbb{P}[X=x | Y=0]=\left\{\begin{array}{l}
+{\frac{\mathbb{P}[X=0, Y=0]}{\mathbb{P}[Y=0]}=\frac{\mathbb{P}[\text { the pattern is } \operatorname{TT}]}{\mathbb{P}[Y=0]}=\frac{1 / 4}{1 / 2} = {1/2}} \\
+{\frac{\mathbb{P}[X=1, Y=0]}{\mathbb{P}[Y=0]}=\frac{\mathbb{P}[\text { the pattern is HT }]}{\mathbb{P}[Y=0]}=\frac{1 / 4}{1 / 2}={1/2}} \\
+{\frac{\mathbb{P}[X=2, Y=0]}{\mathbb{P}[Y=0]}=\frac{\mathbb{P}[\text { well, there is no such pattern }]}{\mathbb{P}[Y=0]}=0}
+\end{array}\right.
+$$
+
+If X and Y are independent:
+$$
+\mathbb{P}[X=x | Y=y]=\frac{\mathbb{P}[X=x, Y=y]}{\mathbb{P}[Y=y]}=\frac{\mathbb{P}[X=x] \mathbb{P}[Y=y]}{\mathbb{P}[Y=y]}=\mathbb{P}[X=x]
+$$
+
+Generalizing to larger collection of random variables (for all $$ x_{1}, x_{2}, \ldots, x_{n} $$):
+$$
+\mathbb{P}\left[X_{1}=x_{1}, X_{2}=x_{2}, \ldots X_{n}=x_{n}\right]=\mathbb{P}\left[X_{1}=x_{1}\right] \mathbb{P}\left[X_{2}=x_{2}\right] \ldots \mathbb{P}\left[X_{n}=x_{n}\right]
+$$
+
+For collection of n independent random variables $$ (X_{1}, X_{2}, \ldots, X_{n} )$$:
+1. $$ g_{1}\left(X_{1}\right), \ldots, g_{n}\left(X_{n}\right)$$ are also independent for (most) functions $$g_{1}, \dots, g_{n}$$
+2. if $$ x_{1}, x_{2}, \ldots, x_{n} $$ are integrable, then product $$ x_{1}, x_{2}, \ldots, x_{n} $$ is integrable, and:
+$$
+\mathbb{E}\left[X_{1} \ldots X_{n}\right]=\mathbb{E}\left[X_{1}\right] \ldots \mathbb{E}\left[X_{n}\right]
+$$
+3. if $$ x_{1}, x_{2}, \ldots, x_{n} $$ are square integrable, then:
+  
+$$
+\operatorname{Var}\left[X_{1}+\cdots+X_{n}\right]=\operatorname{Var}\left[X_{1}\right]+\cdots+\operatorname{Var}\left[X_{n}\right]
+$$
+
+or equivalently:
+
+$$
+\operatorname{Cov}\left[X_{i}, X_{j}\right]=\mathbb{E}\left[\left(X_{1}-\mathbb{E}\left[X_{1}\right]\right)\left(X_{2}-\mathbb{E}\left[X_{2}\right]\right)\right]=0
+$$
+
+for all $$i \neq j \in\{1,2, \ldots, n\}$$. This means that indendepent random variables are uncorrelated. The converse is not true. Uncorrelated random variables may or may not be indepednent. 
+
+When some random varibles $$ ( x_{1}, x_{2}, \ldots, x_{n}) $$ are considered together, you can group them into random vector. 
+
+Distribution of random vector $$ X=(X_{1}, X_{2}, \ldots, X_{n}) $$ is the collection of all probabilities:
+$$
+\mathbb{P}\left[X_{1}=x_{1}, X_{2}=x_{2}, \ldots, X_{n}=x_{n}\right]
+$$
+when $$ x_{1}, x_{2}, \ldots, x_{n} $$ range through all numbers in all approciate supports. Unlike a single random variable. writing down distribution of random vectors in tables is a bit more difficult. In two dimensional cae, you need entire matrix. In high dimensions, you need hologram. 
+
+The distributions of components $$ X_{1}, X_{2}, \ldots, X_{n} $$ of random vector $$X$$ is called the marginal distributions of random variables $$ X_{1}, X_{2}, \ldots, X_{n} $$
+
+If random variables $$ X_{1}, X_{2}, \ldots, X_{n} $$ are part of the same random vector, the distribution of $$X$$ is called the joint distribution of $$ X_{1}, X_{2}, \ldots, X_{n} $$. Unless random variables are known to be indepedddent, the joint distribution holds more information about $$X$$ than all marginal distributions together.
+
+## Example discrete random variables:
+
+Bernoulli. Success (1) of failure (0) with probability p (if success is encoded by 1, failure by $$-1$$ and $$p=\frac{1}{2}$$ we call it the coin toss
+
+- parameters : $$\quad p \in(0,1)(q=1-p)$$
+- notation: $$b(p)$$
+- support: $$\{0,1\}$$
+- pmf: $$\quad p_{0}=p$$ and $$p_{1}=q=1-p$$
+- generating function: $$p s+q$$
+- mean : $$p$$ 
+- standard deviation: $$\sqrt{p q}$$
+
+
+Binomial. The number of successes in n repetitions of a Bernoulli trial with success probability
+
+- parameters : $$\quad n \in \mathbb{N}, p \in(0,1) \quad(q=1-p)$$
+- notation: $$\quad b(n, p)$$ 
+- support: $$\quad\{0,1, \dots, n\}$$
+- pmf: $$\quad p_{k}=\left(\begin{array}{l}{n} \\ {k}\end{array}\right) p^{k} q^{n-k}, k=0, \ldots, n$$
+- generating function : $$(p s+q)^{n}$$
+- mean : $$n p$$
+- standard deviation: $$\sqrt{n p q}$$
+
+Poisson. The number of spelling mistakes one makes while typing a single page.
+- parameters: $$\lambda>0$$
+- notation : $$\quad p(n, p)$$
+- support: $$\mathbb{N}_{0}$$ 
+- pmf $$: \quad p_{k}=e^{-\lambda} \frac{\lambda^{k}}{k !}, k \in \mathbb{N}_{0}$$
+- generating function: $$e^{\lambda(s-1)}$$
+- mean : $$\lambda$$
+- standard deviation: $$\sqrt{\lambda}$$
+
+
+Geometric. The number of repetitions of a Bernoulli trial with parameter p until the first success.
+- parameters : $$\quad p \in(0,1), q=1-p$$
+- notation : $$(g(p)$$ 
+- support: $$\mathbb{N}_{0}$$
+- pmf: $$\quad p_{k}=p q^{k-1}, k \in \mathbb{N}_{0}$$
+- generating function : $$\frac{p}{1-q s}$$ 
+- mean: $$p$$
+- standard deviation: $$\frac{\sqrt{q}}{p}$$
+
+Negative Binomial. The number of failures it takes to obtain r successes in repeated independent Bernoulli trials with success probability p.
+
+- parameters : $$\quad r \in \mathbb{N}, p \in(0,1)(q=1-p)$$
+- notation : $$\quad g(n, p)$$
+- support: $$\mathbb{N}_{0}$$
+- pmf: $$\quad p_{k}=\left(\begin{array}{c}{-r} \\ {k}\end{array}\right) p^{r} q^{k}, k=\in \mathbb{N}_{0}$$
+- generating function : $$\left(\frac{p}{1-q s}\right)^{r}$$
+- mean : $$r \frac{q}{p}$$
+- standard deviation : $$\frac{\sqrt{q r}}{p}$$

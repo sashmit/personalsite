@@ -373,14 +373,37 @@ If random variables $$ X_{1}, X_{2}, \ldots, X_{n} $$ are part of the same rando
 
 Stochastic Processes usually model evolution of a random system in time. 
 
-If $$\mathcal{T}$$ is a subset of $$[0, \infty)$$, a family of random variables $$\left\{X_{t}\right\}_{t \in \mathcal{T}}$$ indexed by $$\mathcal{T}$$ is called a stochastic (or random) process. If $$\mathcal{T}=\mathbb{N}$$ or $$\mathcal{T}=\mathbb{N}_{0}$$, then $$\left\{X_{t}\right\}_{t \in \mathcal{T}}$$ is a discrete-time process (changes happen discretely), if $$[\mathcal{T}=0, \infty)$$, then it  is continous time (value of process can change every instant).
+If $$\mathcal{T}$$ is a subset of $$[0, \infty)$$, a family of random variables $$\left\{X_{t}\right\}_{t \in \mathcal{T}}$$ indexed by $$\mathcal{T}$$ is called a stochastic (or random) process. If $$\mathcal{T}=\mathbb{N}$$ or $$\mathcal{T}=\mathbb{N}_{0}$$, then $$\left\{X_{t}\right\}_{t \in \mathcal{T}}$$ is a discrete-time process (changes happen discretely), if $$[\mathcal{T}=0, \infty)$$, then it  is continuous time (value of process can change every instant).
 
-If $$\mathcal{T}$$ is a singleton, $$\left\{X_{t}\right\}_{t \in \mathcal{T}} \equiv X_{1}$$ is a single random variable. If $$\mathcal{T}$$  is finite ($$\mathcal{T}=\{1,2, \ldots, n\}$$), then it is a random vector. Therefore, stochastic/random p[rocesses are generalizations of random vectors. However, interpretation is usually different. Usually components of random vector are usually different spatial cooredinates, while index $$t \in T $$ is usually interpreted as time. 
+If $$\mathcal{T}$$ is a singleton, $$\left\{X_{t}\right\}_{t \in \mathcal{T}} \equiv X_{1}$$ is a single random variable. If $$\mathcal{T}$$  is finite ($$\mathcal{T}=\{1,2, \ldots, n\}$$), then it is a random vector. Therefore, stochastic/random processes are generalizations of random vectors. However, interpretation is usually different. Usually components of random vector are usually different spatial coordinates, while index $$t \in T $$ is usually interpreted as time. 
 
-Usually hard to define notion of a density or PMF for a stochastic process because of the infinity. Usually a family of finite-dimensional distributions (joint distribuotns of random vectors) are considered:
+Usually hard to define notion of a density or PMF for a stochastic process because of the infinity. Usually a family of finite-dimensional distributions (joint distributions of random vectors) are considered:
 $$
 \left(X_{t_{1}}, X_{t_{2}}, \ldots, X_{t_{n}}\right)
 $$
 for all $$ n \in \mathbb{N}$$  and all choices $$t_{1}, \ldots, t_{n} \in \mathcal{T}$$.
 
-Every stochastic process can be viewed as a function of two variables: $$t$$ and $$\omega$$. For each fixed $$t$$, $$\omega \mapsto X_{t}(\omega)$$ is a random variable. If you keep $$\omega$$ fixed, the stohastic process is a function mapping $$\omega$$ to real valued $$t \mapsto X_{t}(\omega)$$. These functions are called trajectories of the stochastic process $$X$$.
+Every stochastic process can be viewed as a function of two variables: $$t$$ and $$\omega$$. For each fixed $$t$$, $$\omega \mapsto X_{t}(\omega)$$ is a random variable. If you keep $$\omega$$ fixed, the stochastic process is a function mapping $$\omega$$ to real valued $$t \mapsto X_{t}(\omega)$$. These functions are called trajectories of the stochastic process $$X$$.
+
+## Canonical probability space
+
+
+If you have a infinite index ($$ \# \mathcal{T}=+\infty$$) stochastic process, constructing a full probability space ($$\Omega, \mathcal{F}, \mathbb{P}$$) requires quite a bit of technical work. If you make some simplifying assumptions, it is simpler.
+
+Starting with sample space $$\Omega$$:
+$$\Omega=[0,1] \times[0,1] \times \cdots=[0,1]^{\infty}$$
+
+any general element of $$\Omega$$ will be a sequence $$\omega=\left(\omega_{0}, \omega_{1}, \omega_{2}, \ldots\right)$$ of real numbers in [0, 1].  For $$n \in \mathbb{N}_{0}$$, if we define the mapping $$\gamma_{n}: \Omega \rightarrow[0,1]$$ which simply chooses the $$n$$-th coordinate:
+$$
+\gamma_{n}(\omega)=\omega_{n}
+$$
+The following holds true:
+There exists a $$\sigma$$-algebra $$\mathcal{F}$$ and a probability $$\mathbb{P} \text { on } \Omega$$ such that:
+1. each $$\gamma_{n}, n \in \mathbb{N}_{0}$$ is a random variable with uniform distribution on [0, 1] and
+2. the sequence $$\left\{\gamma_{n}\right\}_{n \in \mathbb{N}_{0}}$$ is independent.
+
+The sample space $$\Omega$$ as a source of all randomnesss in system. The elementary event $$\omega \in \Omega$$ is chosen by a process out of our control and exact value of $$\omega$$ is asumed to be unknown. All other parts of system are determinstic (but possibly complicated) functions of $$\omega$$ (random variables).
+
+For example, when a coin is toss, only a single drop of randomess is needed, the outome of the toss. When several coins are tossed, the sample space must be a bigger. When a system involves a infinite number of random variables, a large sample space $$\Omega$$ is needed.
+
+ 

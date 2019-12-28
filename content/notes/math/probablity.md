@@ -413,9 +413,7 @@ A stochastic process $$\left\{X_{n}\right\} n \in \mathbb{N}_{0}$$ is called a s
 2. the increment $$X_{n+1}-X_{n}$$ is independent of $$\left(X_{0}, X_{1}, \ldots, X_{n}\right)$$ for each $$n \in \mathbb{N}_{0-}$$
 3. the increment $$X_{n+1}-X_{n}$$ has a coin toss distribution: $$\mathbb{P}\left[X_{n+1}-X_{n}=1\right]=\mathbb{P}\left[X_{n+1}-X_{n}=-1\right]=\frac{1}{2}$$
 
-For the sequence $$\left\{\gamma_{n}\right\}_{n \in \mathbb{N}_{0}}$$ defined in the canonical probablity space, if we define a new sequence $$
-\left\{\xi_{n}\right\} n \in \mathbb{N}
-$$ of random variables:
+For the sequence $$\left\{\gamma_{n}\right\}_{n \in \mathbb{N}_{0}}$$ defined in the canonical probablity space, if we define a new sequence $$\left\{\xi_{n}\right\} n \in \mathbb{N}$$ of random variables:
 $$
 \xi_{n}=\left\{\begin{array}{ll}
 {1,} & {\gamma_{n} \geq \frac{1}{2}} \\
@@ -423,8 +421,42 @@ $$
 \end{array}\right
 $$
 
-The stochastic process X as a simple random walk is then defined as: $$
-X_{0}=0, X_{n}=\sum_{k=1}^{n} \xi_{k}, n \in \mathbb{N}
-$$
+The stochastic process X as a simple random walk is then defined as: $$X_{0}=0, X_{n}=\sum_{k=1}^{n} \xi_{k}, n \in \mathbb{N}$$
 
 Here, each $$\xi_{n}$$ emulates a coin toss, and the value of the process $$X$$ at time $$n$$ is the cumulative sum of the first $$n$$ coin tosses.
+
+## Simulation
+
+Another way of thinking about sample spaces and randomness is via simulation. A simulation is cheap, and can be repeated to compute various statistics (mean, variance, etc). 
+
+Each simulation involves:
+1. actual sequence of outcomes of coin tosses (or samples from other distribution)
+2. structure of the model. have to program in what happens when if heads shows vs tails shows. for example, in random walk, "go up" if heads, "go down" if tails shows. 
+
+In general, #1, will usually remain the same as in the simple random walk, even in most complicated models. All you need is a sequence of random numbers. If can get a source of indepedently seequenced uniform distriobuted numbers between 0 and 1, you can simulate trajectories of all important stochastic processes. 
+
+### Random number generation
+
+Want the Random Number Generator (RNG) to be as unpreditable as possible, despite getting generated from a deterministic computer. 
+
+Want to cover interval [0, 1] evenly (be uniformally distributed over that interval). Over a long run, the number of random numbers in each subinterval $$[a,b]$$ should b e proportional to length $$b-a$$.
+
+Want each pair of produced numbers cover the square [0, 1] x [0, 1] uniformly - that is, over a long run, the proportion of pairs falling in a patch A of the square [0, 1] x [0, 1] will be proportional to area. Want to continue with such requirements, and ask it for each triple, quadruples, etc.. The highest dimension $$n$$ that produces uniformly distributed numbers in $$[0,1]^n$$ is called the order of the RNG. The Messene Twister has a order of 623.
+
+After a while, the RNGs will start to repeat (because of the finiteness of a computer's memory ). This is called the period of the RNG. Usually RNGs use a hidden called a random seed and is used as an input to the RNG next time it's called. 
+
+### Simulation of Random Variables
+
+If you want to simulate random variables with distributions different from uniform on [0, 1], you use transformation of the output of the RNG. 
+
+Typically use a real (deterministic) function $$f:[0,1] \rightarrow \mathbb{R}$$. 
+
+Some fairly popular procedures:
+
+Discrete Random Numbers - if $$X$$ has discrete  distribution given by: 
+$$
+X \sim\left(\begin{array}{cccc}
+{x_{1}} & {x_{2}} & {\dots} & {x_{n}} \\
+{p_{1}} & {p_{2}} & {\dots} & {p_{n}}
+\end{array}\right)
+$$

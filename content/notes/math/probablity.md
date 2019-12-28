@@ -162,11 +162,11 @@ For random variables that can take on $$+\infty$$, we can say expectation doesn'
 
 # Events
 
-Probability is explained in terms of sample space or probability space, referred usually as $$\Omega$$. 
+Probability is explained in terms of **sample space** or **probability space**, referred usually as $$\Omega$$. 
 
-Various subsets of $$\Omega$$ are called events.
+Various subsets of $$\Omega$$ are called **events**.
 
-Events typically contain all elementary events, elements of the probability space, usually denoted as $$\omega$$. 
+Events typically contain all **elementary events**, elements of the probability space, usually denoted as $$\omega$$. 
 
 For example, if we want to compute likelihood of getting odd number as a sum of outcomes of two dice throws, first build probability space:
 $$
@@ -206,7 +206,7 @@ $$
 
 The pairs $$(X, Y)$$ are very different in two examples. In first, if value of $$X$$ is revealed, it does not affect view of value of $$Y$$. In second, knowledge of $$X$$ gives us knowledge of $$Y$$ ($$6-X$$). 
 
-In general, when more than one random variable is considered, one must look at external information about their relationship outside of their distributions. If there is no relationship, they are independent. i, for two discrete random variables X and Y: 
+In general, when more than one random variable is considered, one must look at external information about their relationship outside of their distributions. If there is no relationship, they are **independent**. i, for two discrete random variables X and Y: 
 $$
 \mathbb{P}[X=x \text { and } Y=y]=\mathbb{P}[X=x] \mathbb{P}[Y=y]
 $$
@@ -220,7 +220,7 @@ $$
 
 # Conditional probability
 
-When two random variables are not independent, we still want to know how the knowledge of the exact value of one affects our guesses the value of the other. This is given by the conditional probability.
+When two random variables are not independent, we still want to know how the knowledge of the exact value of one affects our guesses the value of the other. This is given by the **conditional probability**.
 
 For events $$A, B$$ such that $$\mathbb{P}[B]>0$$, the conditional probability $$
 \mathbb{P}[A | B] $$ of $$A$$ given $$B$$ is:
@@ -230,16 +230,16 @@ $$
 
 The conditional probability is not defined when $$\mathbb{P}[B]=0$$, because this would be dividing by zero. 
 
-A collection of events $$A_{1}, A_{2}, \ldots, A_{n}$$ is called a partition of $$\Omega$$ if $$A_{1} \cup A_{2} \cup \ldots A_{n}=\Omega$$ and $$A_{i} \cap A_{j}=\emptyset$$ for all pairs $$i, j=1, \ldots, n \text { with } i \neq j$$
+A collection of events $$A_{1}, A_{2}, \ldots, A_{n}$$ is called a **partition** of $$\Omega$$ if $$A_{1} \cup A_{2} \cup \ldots A_{n}=\Omega$$ and $$A_{i} \cap A_{j}=\emptyset$$ for all pairs $$i, j=1, \ldots, n \text { with } i \neq j$$
 
 For a partition $$A_{1}, A_{2}, \ldots, A_{n}$$ and event B of $$\Omega$$, the following hold true:
 
-Law of total probability:
+**Law of total probability**:
  $$
 \mathbb{P}[B]=\sum_{i=1}^{n} \mathbb{P}\left[B | A_{i}\right] \mathbb{P}\left[A_{i}\right]
 $$
 
-Bayes formula:  for $$k=1, \ldots, n$$, we have:
+**Bayes formula**:  for $$k=1, \ldots, n$$, we have:
 
 $$
 \mathbb{P}\left[A_{k} | B\right]=\frac{\mathbb{P}\left[B | A_{k}\right] \mathbb{P}\left[A_{k}\right]}{\sum_{i=1}^{n} \mathbb{P}\left[B | A_{i}\right] \mathbb{P}\left[A_{i}\right]}
@@ -255,7 +255,7 @@ $$
 This formula produces different probability distribution for each $$y$$. This is called the conditional distribution of $$X$$, given $$Y=y$$.
 
 Example:
-Let X be number of heads obtained when two coins are thrown. Let Y be indicator of the event that the second coin shows heads. The distribution of X is bioomial:
+Let X be number of heads obtained when two coins are thrown. Let Y be indicator of the event that the second coin shows heads. The distribution of X is binomial:
 $$
 X \sim\left(\begin{array}{ccc}
 {0} & {1} & {2} \\
@@ -263,7 +263,7 @@ X \sim\left(\begin{array}{ccc}
 \end{array}\right)
 $$
 
-Or in more compatact notation, $$X \sim\left(\frac{1}{4}, \frac{1}{2}, \frac{1}{4}\right)$$. Random variable Y has bernoilli distribution $$Y=\left(\frac{1}{2}, \frac{1}{2}\right)$$
+Or in more compact notation, $$X \sim\left(\frac{1}{4}, \frac{1}{2}, \frac{1}{4}\right)$$. Random variable Y has bernoulli distribution $$Y=\left(\frac{1}{2}, \frac{1}{2}\right)$$
 
 If we are told that Y=0, e.g, second coin is heads, then:
 
@@ -280,18 +280,18 @@ $$
 \mathbb{P}[X=x | Y=y]=\frac{\mathbb{P}[X=x, Y=y]}{\mathbb{P}[Y=y]}=\frac{\mathbb{P}[X=x] \mathbb{P}[Y=y]}{\mathbb{P}[Y=y]}=\mathbb{P}[X=x]
 $$
 
-Generalizing to larger collection of random variables (for all $$ x_{1}, x_{2}, \ldots, x_{n} $$):
+Generalizing to larger collection of random variables (for all $$X_{1}, X_{2}, \ldots, X_{n} $$):
 $$
 \mathbb{P}\left[X_{1}=x_{1}, X_{2}=x_{2}, \ldots X_{n}=x_{n}\right]=\mathbb{P}\left[X_{1}=x_{1}\right] \mathbb{P}\left[X_{2}=x_{2}\right] \ldots \mathbb{P}\left[X_{n}=x_{n}\right]
 $$
 
 For collection of n independent random variables $$ (X_{1}, X_{2}, \ldots, X_{n} )$$:
 1. $$ g_{1}\left(X_{1}\right), \ldots, g_{n}\left(X_{n}\right)$$ are also independent for (most) functions $$g_{1}, \dots, g_{n}$$
-2. if $$ x_{1}, x_{2}, \ldots, x_{n} $$ are integrable, then product $$ x_{1}, x_{2}, \ldots, x_{n} $$ is integrable, and:
+2. if $$ X_{1}, X_{2}, \ldots, X_{n} $$ are integrable, then product $$ X_{1}, X_{2}, \ldots, X_{n} $$ is integrable, and:
 $$
 \mathbb{E}\left[X_{1} \ldots X_{n}\right]=\mathbb{E}\left[X_{1}\right] \ldots \mathbb{E}\left[X_{n}\right]
 $$
-3. if $$ x_{1}, x_{2}, \ldots, x_{n} $$ are square integrable, then:
+3. if $$ X_{1}, X_{2}, \ldots, X_{n} $$ is square integrable, then:
   
 $$
 \operatorname{Var}\left[X_{1}+\cdots+X_{n}\right]=\operatorname{Var}\left[X_{1}\right]+\cdots+\operatorname{Var}\left[X_{n}\right]
@@ -303,23 +303,23 @@ $$
 \operatorname{Cov}\left[X_{i}, X_{j}\right]=\mathbb{E}\left[\left(X_{1}-\mathbb{E}\left[X_{1}\right]\right)\left(X_{2}-\mathbb{E}\left[X_{2}\right]\right)\right]=0
 $$
 
-for all $$i \neq j \in\{1,2, \ldots, n\}$$. This means that indendepent random variables are uncorrelated. The converse is not true. Uncorrelated random variables may or may not be indepednent. 
+for all $$i \neq j \in\{1,2, \ldots, n\}$$. This means that independent random variables are **uncorrelated**. The converse is not true. Uncorrelated random variables may or may not be independent. 
 
-When some random varibles $$ ( x_{1}, x_{2}, \ldots, x_{n}) $$ are considered together, you can group them into random vector. 
+When some random variables $$ (X_{1}, X_{2}, \ldots, X_{n}) $$ are considered together, you can group them into **random vector**. 
 
 Distribution of random vector $$ X=(X_{1}, X_{2}, \ldots, X_{n}) $$ is the collection of all probabilities:
 $$
 \mathbb{P}\left[X_{1}=x_{1}, X_{2}=x_{2}, \ldots, X_{n}=x_{n}\right]
 $$
-when $$ x_{1}, x_{2}, \ldots, x_{n} $$ range through all numbers in all approciate supports. Unlike a single random variable. writing down distribution of random vectors in tables is a bit more difficult. In two dimensional cae, you need entire matrix. In high dimensions, you need hologram. 
+when $$ x_{1}, x_{2}, \ldots, x_{n} $$ range through all numbers in all appropriate supports. Unlike a single random variable, writing down distribution of multiple random vectors in tables is a bit more difficult. In two dimensional cae, you need entire matrix. In high dimensions, you need hologram. 
 
-The distributions of components $$ X_{1}, X_{2}, \ldots, X_{n} $$ of random vector $$X$$ is called the marginal distributions of random variables $$ X_{1}, X_{2}, \ldots, X_{n} $$
+The distributions of components $$ X_{1}, X_{2}, \ldots, X_{n} $$ of random vector $$X$$ is called the **marginal distribution** of random variables $$ X_{1}, X_{2}, \ldots, X_{n} $$
 
-If random variables $$ X_{1}, X_{2}, \ldots, X_{n} $$ are part of the same random vector, the distribution of $$X$$ is called the joint distribution of $$ X_{1}, X_{2}, \ldots, X_{n} $$. Unless random variables are known to be indepedddent, the joint distribution holds more information about $$X$$ than all marginal distributions together.
+If random variables $$ X_{1}, X_{2}, \ldots, X_{n} $$ are part of the same random vector, the distribution of $$X$$ is called the **joint distribution** of $$ X_{1}, X_{2}, \ldots, X_{n} $$. Unless random variables are known to be independent, the joint distribution holds more information about $$X$$ than all marginal distributions together.
 
 ## Example discrete random variables:
 
-Bernoulli. Success (1) of failure (0) with probability p (if success is encoded by 1, failure by $$-1$$ and $$p=\frac{1}{2}$$ we call it the coin toss
+**Bernoulli**: Success (1) or failure (0) with probability p. If success is encoded by 1, failure by $$-1$$ and $$p=\frac{1}{2}$$ we call it the coin toss.
 
 - parameters : $$\quad p \in(0,1)(q=1-p)$$
 - notation: $$b(p)$$
@@ -330,7 +330,7 @@ Bernoulli. Success (1) of failure (0) with probability p (if success is encoded 
 - standard deviation: $$\sqrt{p q}$$
 
 
-Binomial. The number of successes in n repetitions of a Bernoulli trial with success probability
+**Binomial**: The number of successes in n repetitions of a Bernoulli trial with success probability
 
 - parameters : $$\quad n \in \mathbb{N}, p \in(0,1) \quad(q=1-p)$$
 - notation: $$\quad b(n, p)$$ 
@@ -340,7 +340,7 @@ Binomial. The number of successes in n repetitions of a Bernoulli trial with suc
 - mean : $$n p$$
 - standard deviation: $$\sqrt{n p q}$$
 
-Poisson. The number of spelling mistakes one makes while typing a single page.
+**Poisson**: The number of spelling mistakes one makes while typing a single page.
 - parameters: $$\lambda>0$$
 - notation : $$\quad p(n, p)$$
 - support: $$\mathbb{N}_{0}$$ 
@@ -349,8 +349,7 @@ Poisson. The number of spelling mistakes one makes while typing a single page.
 - mean : $$\lambda$$
 - standard deviation: $$\sqrt{\lambda}$$
 
-
-Geometric. The number of repetitions of a Bernoulli trial with parameter p until the first success.
+**Geometric**: The number of repetitions of a Bernoulli trial with parameter p until the first success.
 - parameters : $$\quad p \in(0,1), q=1-p$$
 - notation : $$(g(p)$$ 
 - support: $$\mathbb{N}_{0}$$
@@ -359,7 +358,7 @@ Geometric. The number of repetitions of a Bernoulli trial with parameter p until
 - mean: $$p$$
 - standard deviation: $$\frac{\sqrt{q}}{p}$$
 
-Negative Binomial. The number of failures it takes to obtain r successes in repeated independent Bernoulli trials with success probability p.
+**Negative Binomial**: The number of failures it takes to obtain r successes in repeated independent Bernoulli trials with success probability p.
 
 - parameters : $$\quad r \in \mathbb{N}, p \in(0,1)(q=1-p)$$
 - notation : $$\quad g(n, p)$$

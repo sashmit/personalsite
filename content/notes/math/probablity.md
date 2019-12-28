@@ -406,4 +406,25 @@ The sample space $$\Omega$$ as a source of all randomnesss in system. The elemen
 
 For example, when a coin is toss, only a single drop of randomess is needed, the outome of the toss. When several coins are tossed, the sample space must be a bigger. When a system involves a infinite number of random variables, a large sample space $$\Omega$$ is needed.
 
- 
+### Simple Random Walk on Canonical Probablity Space
+
+A stochastic process $$\left\{X_{n}\right\} n \in \mathbb{N}_{0}$$ is called a simple random walk if:
+1. $$X_{0}=0$$
+2. the increment $$X_{n+1}-X_{n}$$ is independent of $$\left(X_{0}, X_{1}, \ldots, X_{n}\right)$$ for each $$n \in \mathbb{N}_{0-}$$
+3. the increment $$X_{n+1}-X_{n}$$ has a coin toss distribution: $$\mathbb{P}\left[X_{n+1}-X_{n}=1\right]=\mathbb{P}\left[X_{n+1}-X_{n}=-1\right]=\frac{1}{2}$$
+
+For the sequence $$\left\{\gamma_{n}\right\}_{n \in \mathbb{N}_{0}}$$ defined in the canonical probablity space, if we define a new sequence $$
+\left\{\xi_{n}\right\} n \in \mathbb{N}
+$$ of random variables:
+$$
+\xi_{n}=\left\{\begin{array}{ll}
+{1,} & {\gamma_{n} \geq \frac{1}{2}} \\
+{-1,} & {\text { otherwise }}
+\end{array}\right
+$$
+
+The stochastic process X as a simple random walk is then defined as: $$
+X_{0}=0, X_{n}=\sum_{k=1}^{n} \xi_{k}, n \in \mathbb{N}
+$$
+
+Here, each $$\xi_{n}$$ emulates a coin toss, and the value of the process $$X$$ at time $$n$$ is the cumulative sum of the first $$n$$ coin tosses.

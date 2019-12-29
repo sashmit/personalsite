@@ -460,3 +460,14 @@ X \sim\left(\begin{array}{cccc}
 {p_{1}} & {p_{2}} & {\dots} & {p_{n}}
 \end{array}\right)
 $$
+
+For discrete distributions that take infinite number of values, can trunate to very large n and approximate. We know that probablities $$p_{1}, p_{2}, \dots, p_{n}$$ add up to 1, so we can define numbers $$ 0 = q_{0}<q_{1}<\cdots<q_{n}=1$$ by:
+$$
+q_{0}=0, q_{1}=p_{1}, q_{2}=p_{1}+p_{2}, \ldots q_{n}=p_{1}+p_{2}+\cdots+p_{n}=1
+$$
+
+To simulate discrete random variable $$X$$, call RNG, then $$x_1$$ if $$0 \leq RNG < q_1$$, $$x_2$$ if $$q_1 \leq RNG < q_2$$, etc. So the transformation funcion $$f$$ is:
+
+$$
+f(x)=\left\{\begin{array}{ll}{x_{1},} & {0 \leq x<q_{1}} \\ {x_{2},} & {q_{1} \leq x<q_{2}} \\ {\dots} & {} \\ {x_{n},} & {q_{n-1} \leq x \leq 1}\end{array}\right.
+$$

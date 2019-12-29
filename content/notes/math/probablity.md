@@ -28,9 +28,9 @@ Probability is about _random variables_.
 
 # Random variables
 
-**Random variables** are uncertain, numerical quantities (values in $$\mathbb{R}$$)
+**Random variables** are uncertain numerical quantities (values in $$\mathbb{R}$$)
 
-Usually we don't know with certainty what value a random variable $$X$$ will take, but we know how to compute probability that its value will be within some subset of $$\mathbb{R}$$
+Usually, we don't know with certainty what value a random variable $$X$$ will take, but we know how to compute the probability that its value will be within some subset of $$\mathbb{R}$$
 
 For example, we can compute $$\mathbb{P}[X \geq 7], \mathbb{P}[X \in[2,3.1]] $$ or $$\mathbb{P}[X \in\{1,2,3\}]$$
 
@@ -44,8 +44,8 @@ Different perspectives of countability of sets:
 
 - A set is countable if it has the same number of elements as the set $$\mathbb{N}=\{1,2, \ldots\}$$ of natural numbers.
 
-- Set $$A$$ is countable if there exists a function $$f: \mathbb{N} \rightarrow A$$ which is bijective (one to one and onto). 
-  - $$f$$ can be thought as the correspondence that “proves” that there exactly as many elements of $$A$$ as there are elements of $$\mathbb{N}$$ 
+- Set $$A$$ is countable if there exists a function $$f: \mathbb{N} \rightarrow A$$ which is bijective (one to one and onto).
+  - $$f$$ can be thought as the correspondence that “proves” that there exactly as many elements of $$A$$ as there are elements of $$\mathbb{N}$$
   - $$ f $$ can be viewed as an ordering of $$A$$; it arranges $$A$$ into a particular order $$A=\left\{a_{1}, a_{2}, \ldots\right\}$$ where $$a_{1}=f(1), a_{2}=f(2)$$ etc.
 
 ### Examples:
@@ -60,7 +60,7 @@ Here: $$f(k)=\left\{\begin{array}{ll}{2 k+1,} & {k \geq 0} \\{-2 k,} & {k<0}\end
 
 - Rational numbers (fractions) $$\mathbb{Q}$$ are countable.
 
-- Set [0, 1] of all real numbers between 0 and 1 are **not countable**; proved by Georg Cantor using the diagonal argument.
+- Set [0, 1] of all real numbers between 0 and 1 are **not countable**. This was proved by Georg Cantor using the diagonal argument.
 
 
 # Discrete random variables  
@@ -100,7 +100,7 @@ When the random variable is $$\mathbb{N}$$-valued or $$\mathbb{N}_0$$-valued, we
 
 For extended $$\mathbb{N}_0$$-valued, if you are given a pmf of the $$\mathbb{N}$$-valued or $$\mathbb{N}_0$$-valued cases and you sum them up, see if it is equal to 1. If so, then $$X$$ never takes $$+\infty$$, or else probability of $$+\infty$$ is positive.
 
-If random variable has support $$S=\{0,1\}$$, it is called indicators (can be thought as of as signal lights). If $$X=1$$, then event of interest has happened  and if $$X=0$$, then event of interest has not happened. 
+If random variable has supported $$S=\{0,1\}$$, it is called indicators (can be thought as of as signal lights). If $$X=1$$, then event of interest has happened  and if $$X=0$$, then event of interest has not happened.
 
 For example, if $$Y$$ is outcome of coin toss, and if you want to know if Heads (H) occurred, can write $$X=\mathbf{1}_{\{Y=H\}}$$
 
@@ -113,7 +113,7 @@ X=\left\{\begin{array}{ll}
 \end{array}\right.
 $$
 
-If we compute $$\mathbb{P}[X=1]$$, then this gives us probability whether the event of interest (X) has happened or not. 
+If we compute $$\mathbb{P}[X=1]$$, then this gives us probability whether the event of interest (X) has happened or not.
 
 
 ## Expectation
@@ -124,7 +124,7 @@ $$
 \mathbb{E}[X]=\sum_{x \in} x \mathbb{P}[X=x]
 $$
 
-as long as the (possibly) infinite sum $$\sum_{x \in} x \mathbb{P}[X=x]$$ absolutely converges, otherwise there is no expectation defined (if sum does not converge or only converges conditionally). 
+As long as the (possibly) infinite sum $$\sum_{x \in} x \mathbb{P}[X=x]$$ absolutely converges, otherwise there is no expectation defined (if sum does not converge or only converges conditionally).
 
 For $$\mathbb{N}_0$$-valued$$ random variables, the above expression simplifies to:
 
@@ -138,7 +138,7 @@ $$
 \lim _{n \rightarrow \infty} \sum_{i=0}^{n} i p_{i}=+\infty
 $$
 
-This sum doesn't absolutely converge and expectation doesn't formally exist, but by convention we can write $$\mathbb{E}[X]=+\infty$$ to indicate that sum diverges towards infinity.
+This sum doesn't absolutely converge and the expectation doesn't formally exist, but by convention we can write $$\mathbb{E}[X]=+\infty$$ to indicate that sum diverges towards infinity.
 
 If $$\mathbb{E}[X]$$ exists, then $$X$$ is called **integrable**. 
 
@@ -402,11 +402,11 @@ There exists a $$\sigma$$-algebra $$\mathcal{F}$$ and a probability $$\mathbb{P}
 1. each $$\gamma_{n}, n \in \mathbb{N}_{0}$$ is a random variable with uniform distribution on [0, 1] and
 2. the sequence $$\left\{\gamma_{n}\right\}_{n \in \mathbb{N}_{0}}$$ is independent.
 
-The sample space $$\Omega$$ as a source of all randomnesss in system. The elementary event $$\omega \in \Omega$$ is chosen by a process out of our control and exact value of $$\omega$$ is asumed to be unknown. All other parts of system are determinstic (but possibly complicated) functions of $$\omega$$ (random variables).
+The sample space $$\Omega$$ as a source of all randomness in system. The elementary event $$\omega \in \Omega$$ is chosen by a process out of our control and the exact value of $$\omega$$ is assumed to be unknown. All other parts of system are deterministic (but possibly complicated) functions of $$\omega$$ (random variables).
 
-For example, when a coin is toss, only a single drop of randomess is needed, the outome of the toss. When several coins are tossed, the sample space must be a bigger. When a system involves a infinite number of random variables, a large sample space $$\Omega$$ is needed.
+For example, when a coin is toss, only a single drop of randomness is needed, the outcome of the toss. When several coins are tossed, the sample space must be a bigger. When a system involves a infinite number of random variables, a large sample space $$\Omega$$ is needed.
 
-### Simple Random Walk on Canonical Probablity Space
+### Simple Random Walk on Canonical Probability Space
 
 A stochastic process $$\left\{X_{n}\right\} n \in \mathbb{N}_{0}$$ is called a simple random walk if:
 1. $$X_{0}=0$$
@@ -433,27 +433,29 @@ Each simulation involves:
 1. actual sequence of outcomes of coin tosses (or samples from other distribution)
 2. structure of the model. have to program in what happens when if heads shows vs tails shows. for example, in random walk, "go up" if heads, "go down" if tails shows. 
 
-In general, #1, will usually remain the same as in the simple random walk, even in most complicated models. All you need is a sequence of random numbers. If can get a source of indepedently seequenced uniform distriobuted numbers between 0 and 1, you can simulate trajectories of all important stochastic processes. 
+In general, #1, will usually remain the same as in the simple random walk, even in most complicated models. All you need is a sequence of random numbers. If can get a source of independently sequenced uniform distributed numbers between 0 and 1, you can simulate trajectories of all important stochastic processes. 
 
 ### Random number generation
 
-Want the Random Number Generator (RNG) to be as unpreditable as possible, despite getting generated from a deterministic computer. 
+Want the Random Number Generator (RNG) to be as unpredictable as possible, despite getting generated from a deterministic computer.
 
-Want to cover interval [0, 1] evenly (be uniformally distributed over that interval). Over a long run, the number of random numbers in each subinterval $$[a,b]$$ should b e proportional to length $$b-a$$.
+Want to cover interval [0, 1] evenly (be uniformly distributed over that interval). Over the long run, the number of random numbers in each subinterval $$[a,b]$$ should b e proportional to length $$b-a$$.
 
-Want each pair of produced numbers cover the square [0, 1] x [0, 1] uniformly - that is, over a long run, the proportion of pairs falling in a patch A of the square [0, 1] x [0, 1] will be proportional to area. Want to continue with such requirements, and ask it for each triple, quadruples, etc.. The highest dimension $$n$$ that produces uniformly distributed numbers in $$[0,1]^n$$ is called the order of the RNG. The Messene Twister has a order of 623.
+Want each pair of produced numbers cover the square [0, 1] x [0, 1] uniformly - that is, over a long run, the proportion of pairs falling in a patch A of the square [0, 1] x [0, 1] will be proportional to area. Want to continue with such requirements, and ask it for each triple, quadruples, etc.. The highest dimension $$n$$ that produces uniformly distributed numbers in $$[0,1]^n$$ is called the order of the RNG. The Messene Twister has an order of 623.
 
-After a while, the RNGs will start to repeat (because of the finiteness of a computer's memory ). This is called the period of the RNG. Usually RNGs use a hidden called a random seed and is used as an input to the RNG next time it's called. 
+After a while, the RNGs will start to repeat (because of the finiteness of a computer's memory ). This is called the period of the RNG. Usually, RNGs use a hidden called a random seed and is used as an input to the RNG next time it's called. 
 
 ### Simulation of Random Variables
 
-If you want to simulate random variables with distributions different from uniform on [0, 1], you use transformation of the output of the RNG. 
+If you want to simulate random variables with distributions different from uniform on [0, 1], you use the transformation of the output of the RNG. 
 
 Typically use a real (deterministic) function $$f:[0,1] \rightarrow \mathbb{R}$$. 
 
 Some fairly popular procedures:
 
-Discrete Random Numbers - if $$X$$ has discrete  distribution given by: 
+#### Discrete Random Numbers
+
+If $$X$$ has discrete  distribution given by: 
 $$
 X \sim\left(\begin{array}{cccc}
 {x_{1}} & {x_{2}} & {\dots} & {x_{n}} \\
@@ -461,13 +463,48 @@ X \sim\left(\begin{array}{cccc}
 \end{array}\right)
 $$
 
-For discrete distributions that take infinite number of values, can trunate to very large n and approximate. We know that probablities $$p_{1}, p_{2}, \dots, p_{n}$$ add up to 1, so we can define numbers $$ 0 = q_{0}<q_{1}<\cdots<q_{n}=1$$ by:
+For discrete distributions that take infinite number of values, can truncate to very large n and approximate. We know that probabilities $$p_{1}, p_{2}, \dots, p_{n}$$ add up to 1, so we can define numbers $$ 0 = q_{0}<q_{1}<\cdots<q_{n}=1$$ by:
 $$
 q_{0}=0, q_{1}=p_{1}, q_{2}=p_{1}+p_{2}, \ldots q_{n}=p_{1}+p_{2}+\cdots+p_{n}=1
 $$
 
-To simulate discrete random variable $$X$$, call RNG, then $$x_1$$ if $$0 \leq RNG < q_1$$, $$x_2$$ if $$q_1 \leq RNG < q_2$$, etc. So the transformation funcion $$f$$ is:
+To simulate discrete random variable $$X$$, call RNG, then $$x_1$$ if $$0 \leq RNG < q_1$$, $$x_2$$ if $$q_1 \leq RNG < q_2$$, etc. So the transformation function $$f$$ is:
 
 $$
 f(x)=\left\{\begin{array}{ll}{x_{1},} & {0 \leq x<q_{1}} \\ {x_{2},} & {q_{1} \leq x<q_{2}} \\ {\dots} & {} \\ {x_{n},} & {q_{n-1} \leq x \leq 1}\end{array}\right.
 $$
+
+#### Method of Inverse Functions
+
+For any continuous random variable $$X$$ with distribution function $$F_X$$, the random variable $$Y=F_{X}(X)$$ is uniformly distributed on [0, 1]. If we invert the distribution function $$F_X$$ and apply it to $$Y$$, you can recover $$X$$. So, if you want to simulate a random variable with invertible distribution function $$F$$, simulate uniform random variable on [0, 1] and apply function $$f=F^{-1}$$  as the transformation function. This method fails if you cannot write the inverse of the distribution function in closed form.
+
+Exponential Distribution: For a Exponentially distributed random variable $$X$$ with parameter $$\lambda$$, the density $$f_{X}$$ of $$X$$ is given by:
+$$
+f_{X}(x)=\lambda \exp (-\lambda x), x>0, \text { and so } F_{X}(x)=1-\exp (-\lambda x), x>0
+$$
+
+and so $$F_{X}^{-1}(y)=-\frac{1}{\lambda} \log (1-y)$$. Since 1-RNG has same U[0, 1] distribution as RND, can conclude that $$f(x)=-\frac{1}{\lambda} \log (x)$$ works as transformation function in this case.
+
+Cauchy Distribution:
+The cauchy distribution has a density function:
+$$
+f_{X}(x)=\frac{1}{\pi} \frac{1}{\left(1+x^{2}\right)}
+$$
+
+The distribution function $$F_X$$ and its inverse are explicit:
+
+$$
+F_{X}(x)=\frac{1}{\pi} \int_{-\infty}^{x} \frac{1}{\left(1+x^{2}\right)} d x=\frac{1}{\pi}\left(\frac{\pi}{2}+\arctan (x)\right), \text { and so } F_{X}^{-1}(y)=\tan \left(\pi\left(y-\frac{1}{2}\right)\right)
+$$
+
+So $$\tan (\pi(\operatorname{rand}-0.5))$$ will simulate a Cauchy random variable for you. 
+
+#### Box-Muller method:
+For normal random variable, there is no inverse function. But you can use a trick with two random numbers. If $$\gamma_{1}$$ and $$\gamma_{2}$$ are independent U[0, 1]-distributed random variables, then random variables
+$$
+X_{1}=\sqrt{-2 \log \left(\gamma_{1}\right)} \cos \left(2 \pi \gamma_{2}\right), X_{2}=\sqrt{-2 \log \left(\gamma_{1}\right)} \sin \left(2 \pi \gamma_{2}\right)
+$$
+
+are independent and standard normal on N(0, 1).
+
+So to simulate a random variable with mean $$\mu=0$$ and $$\sigma^{2}=1$$, get two random numbers (rand1 and rand2). 

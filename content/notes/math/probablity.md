@@ -499,7 +499,7 @@ $$
 
 So $$\tan (\pi(\operatorname{rand}-0.5))$$ will simulate a Cauchy random variable for you. 
 
-#### Box-Muller method:
+#### Box-Muller method
 For normal random variable, there is no inverse function. But you can use a trick with two random numbers. If $$\gamma_{1}$$ and $$\gamma_{2}$$ are independent U[0, 1]-distributed random variables, then random variables
 $$
 X_{1}=\sqrt{-2 \log \left(\gamma_{1}\right)} \cos \left(2 \pi \gamma_{2}\right), X_{2}=\sqrt{-2 \log \left(\gamma_{1}\right)} \sin \left(2 \pi \gamma_{2}\right)
@@ -507,4 +507,21 @@ $$
 
 are independent and standard normal on N(0, 1).
 
-So to simulate a random variable with mean $$\mu=0$$ and $$\sigma^{2}=1$$, get two random numbers (rand1 and rand2). 
+So to simulate a random variable with mean $$\mu=0$$ and $$\sigma^{2}=1$$, get two random numbers (rand1 and rand2). The numbers 
+$$X_{1}=\sqrt{-2 \log (\mathrm{rand} 1)} \cos (2 \pi \mathrm{rand} 2), X_{2}=\sqrt{-2 \log (\mathrm{rand} 1)} \sin (2 \pi \mathrm{rand} 2)$$
+ will be two independent normals. It's necessary to call rand() twice, but you also get two normal numbers. Normally in practice, many implementations produce two random numbers on every second call, return one of them, and store the 2nd for the next function call.
+
+The transformation function is thus:
+$$f_{1}(x, y)=\sqrt{-2 \log (x)} \cos (2 \pi y), f_{2}(x, y)=\sqrt{-2 \log (x)} \sin (2\pi y)$$
+
+#### Method of the Central Limit
+
+Simulate (something like n=12) independent random variables: $$X=\gamma_{1}+\gamma_{2}+\cdots+\gamma_{12}-6$$
+
+This will approximate a unit normal, though it won't be exact ($$\mathbb{P}[X>6]=0, \text { and } \mathbb{P}[Z>6] \neq 0$$ for true normal $$Z$$)
+
+Mathematically speaking, for a sequence of independent random variables $$X_{1}, X_{2},\ldots$$  with the same square integrable distribution. If you set $$\mu=\mathbb{E}\left[X_{1}\right]\left(=\mathbb{E}\left[X_{2}\right]=\ldots\right)$$ and $$\operatorname{Var}\left[X_{1}\right]\left(=\operatorname{Var}\left[X_{2}\right]=\ldots\right)$$. The sequence of normalized random variables $$\frac{\left(X_{1}+X_{2}+\cdots+X_{n}\right)-n \mu}{\sigma \sqrt{n}}$$ converges to a normal random variable.
+
+
+
+

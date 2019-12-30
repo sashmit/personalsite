@@ -574,3 +574,34 @@ g(x, y)=\left\{\begin{array}{ll}
 $$
 
 Can simulate $$n$$ pirs $$\left(x_{i}, y_{i}\right), i=1 \ldots n$$ of uniformally distributed normal numbers and count how many fall into upper quater of unit circle. See how many satisfy $$x_{i}^{2}+y_{i}^{2} \leq 1$$ and divide by n. Multiply result by 4 and you should be close to pi.  
+
+
+$$
+\left\{X_{n}\right\}_{n \in \mathbb{N}_{0}}
+$$
+
+# Simple random walks
+
+A sequence $$\left\{X_{n}\right\}_{n \in \mathbb{N}_{0}}$$ of random variables is called a simple random walk (with parameter $$p \in(0,1))$$ if
+1. $$X_{0}=0$$
+2. $$X_{n+1}-X_{n}$$ is independent of $$\left(X_{0}, X_{1}, \ldots, X_{n}\right)$$ for all $$n \in \mathbb{N},$$ and
+3. the random variable $$X_{n+1}-X_{n}$$ has the following distribution (where $$q=1-p$$)
+$$
+\left(\begin{array}{cc}
+{-1} & {1} \\
+{q} & {p}
+\end{array}\right)
+$$
+If $$p=\frac{1}{2}$$ the random walk is called symmetric.
+
+This is called a simple because the size of each step is fixed (equal to 1), and only the direction is random. Other more general random walks are possible.
+
+If $$\left\{X_{n}\right\}_{n \in \mathbb{N}_{0}}$$ is a simple random walk with param $$p$$, the distribution of X_{n} is discrete with support $$\{-n,-n+2, \ldots, n-2, n\}$$ and probablities:
+$$p_{l}=\mathbb{P}\left[X_{n}=l\right]=\left(\begin{array}{c}{n} \\ {\frac{l+n}{2}}\end{array}\right) p^{(n+l) / 2} q^{(n-l) / 2}, l=-n,-n+2, \ldots, n-2, n$$
+
+$$X_{n}$$ is composed of $$n$$ independent steps $$\xi_{k}=X_{k+1}-X_{k}, k=1, \ldots, n,$$ each of which goes either up or down. In order to reach level $$l$$ in those $$n$$ steps, the number $$u$$ of up-steps and the number $$d$$ of down steps must satisfy $$u-d$$ (and $$u+d=n$$ ). Therefore, $$u=\frac{n+l}{2}$$ and $$d=\frac{n-l}{2}$$
+
+The random variable here $$\frac{n+X_{n}}{2}$$ has the binomial $$b(n, p)$$ distribution.
+
+You can view the random walk as a random trajectory in some space of trajetories, and compute the rquired probability by counting number of trajectories in the subset/event you are interested in, then adding them gether, weighted by probabilities. The space C of trajtectories is $$C=\left\{\left(x_{0}, x_{1}, \ldots, x_{n}\right): x_{0}=0, x_{k+1}-x_{k}=\pm 1, k \leq n-1\right\}$$. The first n steps of the RW is a probablity distribution on the state space C.
+

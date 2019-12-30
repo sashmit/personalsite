@@ -413,7 +413,7 @@ A stochastic process $$\left\{X_{n}\right\} n \in \mathbb{N}_{0}$$ is called a s
 2. the increment $$X_{n+1}-X_{n}$$ is independent of $$\left(X_{0}, X_{1}, \ldots, X_{n}\right)$$ for each $$n \in \mathbb{N}_{0-}$$
 3. the increment $$X_{n+1}-X_{n}$$ has a coin toss distribution: $$\mathbb{P}\left[X_{n+1}-X_{n}=1\right]=\mathbb{P}\left[X_{n+1}-X_{n}=-1\right]=\frac{1}{2}$$
 
-For the sequence $$\left\{\gamma_{n}\right\}_{n \in \mathbb{N}_{0}}$$ defined in the canonical probablity space, if we define a new sequence $$\left\{\xi_{n}\right\} n \in \mathbb{N}$$ of random variables:
+For the sequence $$\left\{\gamma_{n}\right\}_{n \in \mathbb{N}_{0}}$$ defined in the canonical probability space, if we define a new sequence $$\left\{\xi_{n}\right\} n \in \mathbb{N}$$ of random variables:
 $$
 \xi_{n}=\left\{\begin{array}{ll}
 {1,} & {\gamma_{n} \geq \frac{1}{2}} \\
@@ -523,5 +523,54 @@ This will approximate a unit normal, though it won't be exact ($$\mathbb{P}[X>6]
 Mathematically speaking, for a sequence of independent random variables $$X_{1}, X_{2},\ldots$$  with the same square integrable distribution. If you set $$\mu=\mathbb{E}\left[X_{1}\right]\left(=\mathbb{E}\left[X_{2}\right]=\ldots\right)$$ and $$\operatorname{Var}\left[X_{1}\right]\left(=\operatorname{Var}\left[X_{2}\right]=\ldots\right)$$. The sequence of normalized random variables $$\frac{\left(X_{1}+X_{2}+\cdots+X_{n}\right)-n \mu}{\sigma \sqrt{n}}$$ converges to a normal random variable.
 
 
+### Monte Carlo Integration
+
+Law of Large Numbers: If $$X_{1}, X_{2}, \dots$$ is a sequence of random variables with the same distribution, and there is a function $$g: \mathbb{R} \rightarrow \mathbb{R}$$ such that $$\mu=\mathbb{E}\left[g\left(X_{1}\right)\right]\left(=\mathbb{E}\left[g\left(X_{2}\right)\right]=\ldots\right)$$
+
+then:
+$$
+\frac{g\left(X_{1}\right)+g\left(X_{2}\right)+\cdots+g\left(X_{n}\right)}{n} \rightarrow \mu=\int_{-\infty}^{\infty} g(x) f_{X_{1}}(x) d x, \text { as } n \rightarrow \infty
+$$
+
+The key idea of monte carlo integration is:
+
+If the quantity y you are interested in can be written as $$y=\int_{-\infty}^{\infty} g(x) f_{X}(x) d x$$ for some random variable X with density $$f_{X}$$ and some function g, and that $$x_{1}, x_{2}, \dots$$ are random numbers distributed according to distribution with density $$f_{X}$$, then the average $$\frac{1}{n}\left(g\left(x_{1}\right)+g\left(x_{2}\right)+\cdots+g\left(x_{n}\right)\right)$$ will approximate y. 
+
+The accuracy of the approximation behaves like $$1 / \sqrt{n}$$, so you have to quadruple the number of simulations if you want to double the precision of the approximation. 
+
+Examples:
+
+1. Numerical integration.
+   
+If g is a function on [0, 1]. To approximate the integral $$\int_{0}^{1} g(x) d x$$, you can take a sequence of n $$(\mathrm{U}[0,1])$$ random numbers $$x_{1}, x_{2}, \dots$$, to make the approximation:
+$$\int_{0}^{1} g(x) d x \approx \frac{g\left(x_{1}\right)+g\left(x_{2}\right)+\cdots+g\left(x_{n}\right)}{n}$$.
+Here, the density of $$X \sim U[0,1]$$ is given by:
+$$f_{X}(x)=\left\{\begin{array}{ll}
+{1,} & {0 \leq x \leq 1} \\
+{0,} & {\text { otherwise }}
+\end{array}\right.$$
+
+2. Estimating Probabilities:
+
+If Y is a random variable with density function $$f_{Y}$$. If we want the probability of $$\mathbb{P}[Y \in[a, b]]$$ for some $$a<b$$, we can simulate $$n$$ draaws $$y_{1}, y_{2}, \dots, y_{n}$$ from the distribution $$F_{Y}$$, tand the required approximatin is:
+$$\mathbb{P}[Y \in[a, b]] \approx \frac{\text { number of } y_{n}^{\prime} \text { s falling in the interval }[a, b]}{n}$$
+
+The great thing about Monte-Carlo is that even if the density of the random variable cannot be obtained, but you can simuilate darws from it, you can still perform calculate aobve and get approximation. Everything works in same way for probabilities involving random vectors in any number of dimensions. 
 
 
+3. Approximation of pi
+
+Can calculate that $$\pi \approx 3.141592$$ by using Monte Carlo method. All you have to exploit that $$\pi$$ is the area of the unit disk. Therfore $$\pi / 4$$ is equal to the portion of the area of the unit disk lying on the positive quadrant. 
+
+Can write:
+$$\frac{\pi}{4}=\int_{0}^{1} \int_{0}^{1} g(x, y) d x d y$$
+
+Where: 
+$$
+g(x, y)=\left\{\begin{array}{ll}
+{1,} & {x^{2}+y^{2} \leq 1} \\
+{0,} & {\text { otherwise }}
+\end{array}\right.
+$$
+
+Can simulate $$n$$ pirs $$\left(x_{i}, y_{i}\right), i=1 \ldots n$$ of uniformally distributed normal numbers and count how many fall into upper quater of unit circle. See how many satisfy $$x_{i}^{2}+y_{i}^{2} \leq 1$$ and divide by n. Multiply result by 4 and you should be close to pi.  
